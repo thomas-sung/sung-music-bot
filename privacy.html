@@ -73,6 +73,10 @@
             border-radius: 5px;
         }
 
+        li {
+            margin-bottom: 8px;
+        }
+
     </style>
 
 </head>
@@ -114,8 +118,8 @@
 <h2>2. 本 Bot 可能取得的資訊</h2>
 
 <p>
-為了提供音樂播放功能，本 Bot 可能接收 Discord
-提供給 Bot 的下列資訊：
+為了提供音樂播放及 Slash Commands 功能，
+本 Bot 可能接收 Discord 提供給 Bot 的下列資訊：
 </p>
 
 <ul>
@@ -132,13 +136,13 @@
 
     <li>
         <strong>頻道資訊：</strong>
-        例如文字頻道及語音頻道的相關 ID。
+        例如文字頻道及語音頻道相關 ID。
     </li>
 
     <li>
-        <strong>訊息內容：</strong>
-        為了辨識及執行 Bot 指令，
-        Bot 可能需要接收使用者輸入的指令內容。
+        <strong>Slash Command 輸入：</strong>
+        使用者透過 Bot 指令提供的歌曲名稱、
+        YouTube 網址或其他指令參數。
     </li>
 
     <li>
@@ -157,11 +161,11 @@
 <h2>3. 音樂播放資料</h2>
 
 <p>
-當使用者使用播放指令，例如：
+當使用者使用例如：
 </p>
 
 <p>
-<code>!play 音樂名稱</code>
+<code>/play 音樂名稱</code>
 </p>
 
 <p>
@@ -169,7 +173,7 @@
 </p>
 
 <p>
-<code>!play 音樂網址</code>
+<code>/play YouTube網址</code>
 </p>
 
 <p>
@@ -178,8 +182,8 @@
 </p>
 
 <p>
-本 Bot 目前會在執行播放功能期間，
-於記憶體中暫時保存歌曲播放佇列及目前播放歌曲。
+本 Bot 在執行播放功能期間，
+會於記憶體中暫時保存歌曲播放佇列及目前播放歌曲。
 </p>
 
 <p>
@@ -232,7 +236,7 @@
 
 <ul>
 
-    <li>處理 Discord Bot 指令</li>
+    <li>處理 Discord Slash Commands</li>
 
     <li>搜尋使用者要求播放的歌曲</li>
 
@@ -244,7 +248,11 @@
 
     <li>調整音量及控制播放狀態</li>
 
-    <li>維持 Bot 的正常運作</li>
+    <li>判斷播放狀態</li>
+
+    <li>在無歌曲播放時管理語音連線</li>
+
+    <li>維持 Bot 正常運作</li>
 
     <li>處理錯誤及技術問題</li>
 
@@ -267,6 +275,10 @@
 </p>
 
 <p>
+這些資料主要用於維持目前 Discord 伺服器的音樂播放狀態。
+</p>
+
+<p>
 當 Bot 重啟、停止或相關播放狀態結束後，
 這些暫存在記憶體中的資料可能會被清除。
 </p>
@@ -280,12 +292,10 @@
 
 <section>
 
-<section>
-
 <h2>7. 第三方服務</h2>
 
 <p>
-本 Bot 使用第三方技術及服務來提供 YouTube 音樂播放功能。
+本 Bot 使用第三方技術及服務來提供音樂播放功能。
 </p>
 
 <ul>
@@ -296,33 +306,26 @@
     </li>
 
     <li>
-        <strong>YouTube：</strong>
-        作為歌曲搜尋及音樂內容來源。
+        <strong>yt-dlp：</strong>
+        用於取得使用者要求的音樂相關資訊及音訊串流。
     </li>
 
     <li>
-        <strong>yt-dlp：</strong>
-        用於處理 YouTube 搜尋結果及取得音訊串流資訊。
+        <strong>音樂內容來源：</strong>
+        使用者提供的網址或搜尋結果可能來自第三方內容平台。
     </li>
 
 </ul>
 
 <p>
-當使用者使用 <code>!play</code> 指令時，
-使用者提供的搜尋關鍵字或 YouTube 網址會被用於搜尋
-及取得對應的 YouTube 音樂內容。
+第三方服務可能依照其自身的隱私政策、
+服務條款及技術規則處理資料。
 </p>
 
 <p>
-YouTube、Discord 及其他第三方服務可能依照其自身的
-隱私政策、服務條款及技術規則處理相關資料。
+我們無法控制第三方服務的資料處理方式。
 </p>
 
-<p>
-sung-music-bot 不控制第三方服務的資料處理方式。
-</p>
-
-</section>
 </section>
 
 
@@ -412,15 +415,13 @@ sung-music-bot 不控制第三方服務的資料處理方式。
 
 <p>
 如果你對本隱私權政策或資料處理方式有任何疑問，
-請透過以下方式聯絡我們：
+可以透過以下方式聯絡我們。
 </p>
 
 <p>
 Email：
 <strong>thomas.sung.sung@gmail.com</strong>
 </p>
-
-
 
 </section>
 
