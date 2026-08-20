@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="sung-music-bot 是一款免費的 Discord 音樂機器人，支援播放歌曲、播放佇列、暫停、繼續、跳過與音量控制。"
+        content="sung-music-bot 是一款免費的 Discord 音樂機器人，支援 YouTube 音樂播放、播放佇列、暫停、繼續、跳過與音量控制。"
     >
 
     <style>
@@ -69,6 +69,12 @@
             font-weight: bold;
             background: #5865f2;
             color: white;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
         }
 
         .button.secondary {
@@ -88,6 +94,21 @@
 
         ul {
             padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        code {
+            background: #111827;
+            padding: 4px 8px;
+            border-radius: 5px;
+            color: #e5e7eb;
+        }
+
+        a {
+            color: #93c5fd;
         }
 
         footer {
@@ -112,7 +133,6 @@
 
         <div class="logo">🎵</div>
 
-        <!-- 把 sung-music-bot 改成你的 Bot 名稱 -->
         <h1>sung-music-bot</h1>
 
         <p class="subtitle">
@@ -121,13 +141,11 @@
 
         <div class="buttons">
 
-            <!--
-                把下面的網址換成你的 Discord Bot 邀請網址
-            -->
             <a
                 class="button"
-                href="https://discord.com/oauth2/authorize?client_id=1540048968271138979&permissions=36700160&scope=bot"
+                href="https://discord.com/oauth2/authorize?client_id=1540048968271138979&permissions=36700160&scope=bot%20applications.commands"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 邀請 Bot
             </a>
@@ -165,6 +183,12 @@
             Bot 會搜尋 YouTube 並取得對應的音訊串流進行播放。
         </p>
 
+        <p>
+            Bot 使用 Discord Slash Commands，
+            因此所有主要功能都可以直接透過
+            <strong>/</strong> 指令使用。
+        </p>
+
     </section>
 
 
@@ -184,6 +208,7 @@
             <li>🎵 查看目前播放歌曲</li>
             <li>🔊 調整音量</li>
             <li>👋 離開語音頻道</li>
+            <li>💤 無歌曲一段時間後自動離開語音頻道</li>
         </ul>
 
     </section>
@@ -191,24 +216,76 @@
 
     <section>
 
-        <h2>📖 指令</h2>
+        <h2>📖 Slash Commands</h2>
 
         <ul>
-            <li><code>!play &lt;YouTube網址/關鍵字&gt;</code> — 播放 YouTube 音樂</li>
-            <li><code>!skip</code> — 跳過目前歌曲</li>
-            <li><code>!pause</code> — 暫停播放</li>
-            <li><code>!resume</code> — 繼續播放</li>
-            <li><code>!stop</code> — 停止播放並清空佇列</li>
-            <li><code>!queue</code> — 查看播放佇列</li>
-            <li><code>!nowplaying</code> — 查看目前播放歌曲</li>
-            <li><code>!volume &lt;0-200&gt;</code> — 設定音量</li>
-            <li><code>!leave</code> — 離開語音頻道</li>
-            <li><code>!help</code> — 查看所有指令</li>
+            <li>
+                <code>/play</code>
+                — 播放 YouTube 音樂或搜尋歌曲
+            </li>
+
+            <li>
+                <code>/skip</code>
+                — 跳過目前歌曲
+            </li>
+
+            <li>
+                <code>/pause</code>
+                — 暫停播放
+            </li>
+
+            <li>
+                <code>/resume</code>
+                — 繼續播放
+            </li>
+
+            <li>
+                <code>/stop</code>
+                — 停止播放並清空佇列
+            </li>
+
+            <li>
+                <code>/queue</code>
+                — 查看播放佇列
+            </li>
+
+            <li>
+                <code>/nowplaying</code>
+                — 查看目前播放歌曲
+            </li>
+
+            <li>
+                <code>/volume</code>
+                — 調整音量
+            </li>
+
+            <li>
+                <code>/leave</code>
+                — 離開語音頻道
+            </li>
         </ul>
 
         <p>
-            如果你使用的 Bot 前綴不是 <code>!</code>，
-            請以伺服器中實際設定的前綴為準。
+            使用 Discord 聊天欄位輸入
+            <code>/</code>
+            即可查看可用的 Bot 指令。
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>💤 自動節省資源</h2>
+
+        <p>
+            為降低免費雲端主機的 CPU、RAM 與網路資源使用量，
+            sung-music-bot 在沒有歌曲播放時會自動管理語音連線。
+        </p>
+
+        <p>
+            當播放佇列清空且長時間沒有新的歌曲時，
+            Bot 可以自動離開語音頻道，以減少不必要的資源消耗。
         </p>
 
     </section>
