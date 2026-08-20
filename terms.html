@@ -67,6 +67,10 @@
             color: #9ca3af;
         }
 
+        li {
+            margin-bottom: 8px;
+        }
+
     </style>
 
 </head>
@@ -130,6 +134,7 @@ sung-music-bot 是一款提供 Discord YouTube 音樂播放功能的第三方機
     <li>🎵 顯示目前播放歌曲</li>
     <li>🔗 使用 YouTube 網址播放</li>
     <li>👋 加入及離開 Discord 語音頻道</li>
+    <li>💤 無歌曲播放時自動管理語音連線</li>
 </ul>
 
 <p>
@@ -163,11 +168,42 @@ sung-music-bot 是一款提供 Discord YouTube 音樂播放功能的第三方機
 
 <section>
 
-<h2>4. YouTube 音樂及第三方內容</h2>
+<h2>4. Slash Commands</h2>
 
 <p>
-sung-music-bot 目前僅支援透過 YouTube
-搜尋及取得音訊串流，以提供 Discord 語音播放功能。
+本 Bot 主要透過 Discord Slash Commands 提供功能。
+</p>
+
+<p>
+例如：
+</p>
+
+<ul>
+    <li><code>/play</code> — 播放或搜尋歌曲</li>
+    <li><code>/skip</code> — 跳過歌曲</li>
+    <li><code>/pause</code> — 暫停播放</li>
+    <li><code>/resume</code> — 繼續播放</li>
+    <li><code>/stop</code> — 停止播放</li>
+    <li><code>/queue</code> — 查看播放佇列</li>
+    <li><code>/nowplaying</code> — 查看目前歌曲</li>
+    <li><code>/volume</code> — 調整音量</li>
+    <li><code>/leave</code> — 離開語音頻道</li>
+</ul>
+
+<p>
+實際可使用的指令可能因 Bot 更新而有所變更。
+</p>
+
+</section>
+
+
+<section>
+
+<h2>5. YouTube 音樂及第三方內容</h2>
+
+<p>
+sung-music-bot 目前透過第三方工具搜尋及取得
+YouTube 相關音訊串流，以提供 Discord 語音播放功能。
 </p>
 
 <p>
@@ -194,7 +230,7 @@ YouTube 或相關第三方服務若變更其服務、技術、
 
 <section>
 
-<h2>5. 禁止使用方式</h2>
+<h2>6. 禁止使用方式</h2>
 
 <p>
 你不得使用本 Bot 從事任何違法或侵害他人權利的活動。
@@ -219,7 +255,7 @@ YouTube 或相關第三方服務若變更其服務、技術、
 
 <section>
 
-<h2>6. 服務可用性</h2>
+<h2>7. 服務可用性</h2>
 
 <p>
 本 Bot 以目前可提供的狀態運作。
@@ -247,7 +283,7 @@ YouTube 或第三方服務問題、網路問題或其他不可控因素而暫時
 
 <section>
 
-<h2>7. 免費服務</h2>
+<h2>8. 免費服務</h2>
 
 <p>
 目前 sung-music-bot 為免費提供。
@@ -263,7 +299,24 @@ YouTube 或第三方服務問題、網路問題或其他不可控因素而暫時
 
 <section>
 
-<h2>8. 責任限制</h2>
+<h2>9. 資源管理</h2>
+
+<p>
+為降低伺服器資源使用量，本 Bot 可能在沒有歌曲播放、
+且符合特定條件時，自動離開 Discord 語音頻道。
+</p>
+
+<p>
+自動離開語音頻道屬於正常服務功能，
+不代表使用者或 Discord 伺服器遭到停權。
+</p>
+
+</section>
+
+
+<section>
+
+<h2>10. 責任限制</h2>
 
 <p>
 在法律允許的最大範圍內，
@@ -280,7 +333,7 @@ YouTube 或第三方服務問題、網路問題或其他不可控因素而暫時
 
 <section>
 
-<h2>9. 停止使用</h2>
+<h2>11. 停止使用</h2>
 
 <p>
 如果使用者違反本服務條款，
@@ -297,7 +350,7 @@ YouTube 或第三方服務問題、網路問題或其他不可控因素而暫時
 
 <section>
 
-<h2>10. 條款修改</h2>
+<h2>12. 條款修改</h2>
 
 <p>
 我們可能因服務功能、法律或營運需求而修改本服務條款。
@@ -313,19 +366,17 @@ YouTube 或第三方服務問題、網路問題或其他不可控因素而暫時
 
 <section>
 
-<h2>11. 聯絡方式</h2>
+<h2>13. 聯絡方式</h2>
 
 <p>
 如果你對本服務條款有任何問題，
-可以透過以下方式聯絡我們(不一定能立即回覆)：
+可以透過以下方式聯絡我們（不一定能立即回覆）：
 </p>
 
 <p>
 Email：
 <strong>thomas.sung.sung@gmail.com</strong>
 </p>
-
-
 
 </section>
 
@@ -348,4 +399,3 @@ Email：
 
 </body>
 </html>
-```
